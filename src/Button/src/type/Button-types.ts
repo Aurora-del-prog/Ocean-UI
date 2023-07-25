@@ -12,7 +12,11 @@ export const buttonProps = {
   size: {
     type: String as PropType<IButtonSize>,
     default: 'medium'
-  }
+  },
+  disabled: {
+    type: Boolean,
+    default: false
+  },
 }
 
 // 利用值反推出Button属性类型

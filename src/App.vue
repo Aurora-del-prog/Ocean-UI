@@ -7,7 +7,8 @@ import Button from "./Button/src/Button";
     <div class="w-20 h-16 left-1/2 top-1/3 absolute">
       <Button type="primary" size="small">111</Button>
       <Button type="primary" size="medium">222</Button>
-      <Button type="primary" size="large">333</Button>
+      <!-- Boolean  直接用值表示true/false -->
+      <Button type="primary" size="large" disabled>333</Button>
     </div>
   </div>
 </template>
