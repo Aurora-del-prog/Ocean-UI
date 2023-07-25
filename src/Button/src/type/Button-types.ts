@@ -17,6 +17,10 @@ export const buttonProps = {
     type: Boolean,
     default: false
   },
+  block: {
+    type: Boolean,
+    default: false
+  },
 }
 
 // 利用值反推出Button属性类型
