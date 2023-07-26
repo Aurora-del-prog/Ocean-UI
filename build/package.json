@@ -1,0 +1,17 @@
+{
+    "name": "ocean-ui",
+    "version": "0.0.0",
+    "main": "ocean-ui.umd.js",
+    "module": "ocean-ui.es.js",
+    "author": "HSL",
+    "description": "第一个Vue UI组件库Ocean-UI！",
+    "repository": {
+      "type": "git",
+      "url": "git+git@github.com:Aurora-del-prog/Ocean-UI.git"
+    },
+    "keywords": ["vue3", "组件库", "tsx", "UI"],
+    "license": "ISC",
+    "bugs": {
+      "url": "git@github.com:Aurora-del-prog/Ocean-UI/issues"
+    }
+  }
