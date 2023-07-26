@@ -16,7 +16,7 @@ const baseConfig = defineConfig({
 // 入口文件
 const entryFile = path.resolve(__dirname, './entry.ts');
 // 组件目录
-// const componentsDir = path.resolve(__dirname, '../src');
+const componentsDir = path.resolve(__dirname, '../src');
 // 输出目录
 const outputDir = path.resolve(__dirname, '../build');
 
@@ -70,25 +70,25 @@ const createPackageJson = (name) => {
 }
 
 // 单组件按需构建
-// const buildSingle = async name => {
-//   await build(
-//     defineConfig({
-//       ...baseConfig,
-//       build: {
-//         rollupOptions,
-//         lib: {
-//           entry: path.resolve(componentsDir, name),
-//           name: 'index',
-//           fileName: 'index',
-//           formats: ['es', 'umd']
-//         },
-//         outDir: path.resolve(outputDir, name)
-//       }
-//     })
-//   )
+const buildSingle = async name => {
+  await build(
+    defineConfig({
+      ...baseConfig,
+      build: {
+        rollupOptions,
+        lib: {
+          entry: path.resolve(componentsDir, name),
+          name: 'index',
+          fileName: 'index',
+          formats: ['es', 'umd']
+        },
+        outDir: path.resolve(outputDir, name)
+      }
+    })
+  )
 
-//   createPackageJson(name)
-// }
+  createPackageJson(name)
+}
 
 // 执行创建
 // 全量构建
@@ -117,16 +117,16 @@ const buildLib = async () => {
   await buildAll()
 
   // 按需打包
-  // fs.readdirSync(componentsDir)
-  //   .filter(name => {
-  //     // 只要目录不要文件，且里面包含index.ts
-  //     const componentDir = path.resolve(componentsDir, name)
-  //     const isDir = fs.lstatSync(componentDir).isDirectory()
-  //     return isDir && fs.readdirSync(componentDir).includes('index.ts')
-  //   })
-  //   .forEach(async name => {
-  //     await buildSingle(name)
-  //   })
+  fs.readdirSync(componentsDir)
+    .filter(name => {
+      // 只要目录不要文件，且里面包含index.ts
+      const componentDir = path.resolve(componentsDir, name)
+      const isDir = fs.lstatSync(componentDir).isDirectory()
+      return isDir && fs.readdirSync(componentDir).includes('index.ts')
+    })
+    .forEach(async name => {
+      await buildSingle(name)
+    })
 }
 
 buildLib()
