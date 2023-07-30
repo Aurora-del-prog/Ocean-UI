@@ -6,6 +6,11 @@ import vueJSX from "@vitejs/plugin-vue-jsx";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(), vueJSX()],
+  build: {
+    rollupOptions: {
+      esModule: true
+    }
+  },
   test: {
     // jest like test apis
     globals: true,
@@ -15,5 +20,6 @@ export default defineConfig({
     transformMode: {
       web: [/.[tj]sx$/]
     }
-  }
+  },
+  
 });

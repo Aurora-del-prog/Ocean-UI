@@ -5,7 +5,6 @@ export default defineComponent({
   name: 'Button',
   props:buttonProps,
   setup(props: ButtonProps, {slots}) {
-    console.log(props)
     const { type, size, disabled, block } = toRefs(props)
     
     return ()=>{
