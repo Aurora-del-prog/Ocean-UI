@@ -5,7 +5,7 @@
   @apply inline-flex items-center justify-center;
   // 元素
   @apply border-[1px] border-solid border-transparent
-  h-[28px] py-0 px-[20px]
+  h-[28px] py-0 px-[20px] mx-2
   bg-transparent;
   border-radius: $s-border-radius;
 
@@ -26,13 +26,21 @@
   &[disabled] {
     @apply cursor-not-allowed
   }
+
+  // 圆角
+  &.s-btn--round {
+    @apply rounded-full
+  }
   
+  // 块级
   &.s-btn--block {
     @apply block w-full
   }
-  &.s-btn--loading {
-    // @apply 
-  }
+
+  // //loading状态
+  // &[loading] {
+  //   @apply spinner w-8 h-8 border-2 border-gray-900 rounded-full animate-spin
+  // }
 }
 
 @mixin button-variant($variant, $pseudo: false) {
