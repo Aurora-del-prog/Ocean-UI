@@ -7,8 +7,7 @@
 ```vue
 <template>
   <h-button></h-button>
-  <h-button type="primary" round></h-button>
-  <h-button type="text"></h-button>
+  <h-button type="primary" round>文本</h-button>
 </template>
 ```
 
@@ -23,6 +22,7 @@
   <h-button></h-button>
   <h-button type="primary"></h-button>
   <h-button type="text"></h-button>
+  <h-button loading ></h-button>
 </template>
 ```
 

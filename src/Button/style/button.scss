@@ -1,6 +1,7 @@
 @use './button-config.scss';
 @import './button-base.scss';
 
+
 .s-btn {
   @include button-base;
   // 导入type相关的样式

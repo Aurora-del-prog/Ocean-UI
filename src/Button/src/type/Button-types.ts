@@ -25,10 +25,10 @@ export const buttonProps = {
     type: Boolean,
     default: false
   },
-  // loading: {
-  //   type: Boolean,
-  //   default: false
-  // },
+  loading: {
+    type: Boolean,
+    default: false
+  },
 }
 
 // 利用值反推出Button属性类型
