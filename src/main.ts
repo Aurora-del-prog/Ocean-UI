@@ -1,8 +1,9 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import './index.scss'
-import OceanUI from './index'
+import { createApp } from 'vue'
+// import './style.css'
+import './styles/index.scss'
+import App from './App.vue'
+import Button from './button'
+// import SheepUI from '../build/'
+import '../build/style.css'
 
-const app = createApp(App)
-app.use(OceanUI)
-app.mount("#app");
+createApp(App).use(Button).mount('#app')

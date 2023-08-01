@@ -6,8 +6,7 @@
 
 ```vue
 <template>
-  <h-button></h-button>
-  <h-button type="primary" round>文本</h-button>
+  <s-button></s-button>
 </template>
 ```
 
@@ -19,10 +18,9 @@
 
 ```vue
 <template>
-  <h-button></h-button>
-  <h-button type="primary"></h-button>
-  <h-button type="text"></h-button>
-  <h-button loading ></h-button>
+  <s-button></s-button>
+  <s-button type="primary"></s-button>
+  <s-button type="text"></s-button>
 </template>
 ```
 
@@ -33,9 +31,9 @@
 :::demo 通过 size 属性设置按钮样式，可选：small | medium | large
 ```vue
 <template>
-  <h-button size="small">Small</h-button>
-  <h-button>Medium</h-button>
-  <h-button size="large">Large</h-button>
+  <s-button size="small">Small</s-button>
+  <s-button>Medium</s-button>
+  <s-button size="large">Large</s-button>
 </template>
 ```
 :::
@@ -46,10 +44,10 @@
 :::demo 通过 disabled 属性禁用按钮
 ```vue
 <template>
-    <h-button type="primary"          
-      @click="confirm">Primary</h-button>
-    <h-button type="primary" disabled 
-      @click="confirm">Disabled</h-button>
+    <s-button type="primary"          
+      @click="confirm">Primary</s-button>
+    <s-button type="primary" disabled 
+      @click="confirm">Disabled</s-button>
 </template>
 <script setup>
   const confirm = () => console.log('confirm')
@@ -62,8 +60,8 @@
 :::demo 通过 block 属性设置按钮为块级
 ```vue
 <template>
-  <h-button type="primary" block>Confirm</h-button>
-  <h-button block>Cancel</h-button>
+  <s-button type="primary" block>Confirm</s-button>
+  <s-button block>Cancel</s-button>
 </template>
 ```
 :::

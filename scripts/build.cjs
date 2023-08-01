@@ -1,28 +1,24 @@
-const path = require('path');
-const fs = require('fs-extra')
-// 引入vite导出的build方法，用它来创建
-const { defineConfig, build } = require('vite');
-const vue = require('@vitejs/plugin-vue');
-const vueJsx = require('@vitejs/plugin-vue-jsx');
+//build.js
+const path = require('path')
 const fsExtra = require('fs-extra')
-const version = require('../package.json').version
+// 新增
+const fs = require('fs')
+const { defineConfig, build } = require('vite')
+const vue = require('@vitejs/plugin-vue')
+const vueJsx = require('@vitejs/plugin-vue-jsx')
 
-// // 基础配置
+const entryFile = path.resolve(__dirname, './entry.ts')
+// 组件目录
+const componentsDir = path.resolve(__dirname, '../src')
+const outputDir = path.resolve(__dirname, '../build')
+
 const baseConfig = defineConfig({
   configFile: false,
   publicDir: false,
   plugins: [vue(), vueJsx()]
 })
-// 入口文件
-const entryFile = path.resolve(__dirname, './entry.ts');
-// 组件目录
-const componentsDir = path.resolve(__dirname, '../src');
-// 输出目录
-const outputDir = path.resolve(__dirname, '../build');
 
-// rollup配置
 const rollupOptions = {
-  // 外置
   external: ['vue', 'vue-router'],
   output: {
     globals: {
@@ -31,36 +27,35 @@ const rollupOptions = {
   }
 }
 
-// 生成package.json
-const createPackageJson = (name) => {
-  // 预设
+// 创建时传入包名name
+const createPackageJson = name => {
+  // 根据传入name决定包名、主文件和主模块名称
   const fileStr = `{
-    "name": "${name ? name : 'ocean-ui'}",
-    "version": "${version}",
-    "main": "${name ? 'index.umd.js' : 'ocean-ui.umd.js'}",
-    "module": "${name ? 'index.umd.js' : 'ocean-ui.es.js'}",
-    "author": "HSL",
-    "description": "第一个Vue UI组件库Ocean-UI！",
+    "name": "${name ? name : 'sheep-ui'}",
+    "version": "0.0.0",
+    "main": "${name ? 'index.umd.js' : 'sheep-ui.umd.js'}",
+    "module": "${name ? 'index.js' : 'sheep-ui.js'}",
+    "author": "杨村长",
+    "github": "",
+    "description": "羊村第一个组件库Sheep-UI，以后村里羊圈能不能建好就看它了！",
     "repository": {
       "type": "git",
-      "url": "git+git@github.com:Aurora-del-prog/Ocean-UI.git"
+      "url": "git+https://github.com/57code/sheep-ui.git"
     },
     "keywords": ["vue3", "组件库", "tsx", "UI"],
     "license": "ISC",
     "bugs": {
-      "url": "git@github.com:Aurora-del-prog/Ocean-UI/issues"
-    }
+      "url": "https://github.com/57code/sheep-ui/issues"
+    },
   }`
-
+  // 存在包名称，给单组件生成package.json文件
   if (name) {
-    // 单个组件，输出对应的package.json
     fsExtra.outputFile(
       path.resolve(outputDir, `${name}/package.json`),
       fileStr,
       'utf-8'
     )
   } else {
-    // 全量
     fsExtra.outputFile(
       path.resolve(outputDir, 'package.json'),
       fileStr,
@@ -68,7 +63,6 @@ const createPackageJson = (name) => {
     )
   }
 }
-
 // 单组件按需构建
 const buildSingle = async name => {
   await build(
@@ -90,8 +84,6 @@ const buildSingle = async name => {
   createPackageJson(name)
 }
 
-// 执行创建
-// 全量构建
 const buildAll = async () => {
   await build(
     defineConfig({
@@ -100,26 +92,24 @@ const buildAll = async () => {
         rollupOptions,
         lib: {
           entry: entryFile,
-          name: 'ocean-ui',
-          fileName: 'ocean-ui',
+          name: 'sheep-ui',
+          fileName: 'sheep-ui',
           formats: ['es', 'umd']
         },
         outDir: outputDir
       }
     })
   )
-
-  // 生成package.json
   createPackageJson()
 }
 
 const buildLib = async () => {
   await buildAll()
-
-  // 按需打包
+  // 创建单组件包
+  // 获取组件名称组成的数组
   fs.readdirSync(componentsDir)
     .filter(name => {
-      // 只要目录不要文件，且里面包含index.ts
+      // 过滤组件目录：只要目录不要文件，且目录中包含index.ts
       const componentDir = path.resolve(componentsDir, name)
       const isDir = fs.lstatSync(componentDir).isDirectory()
       return isDir && fs.readdirSync(componentDir).includes('index.ts')
