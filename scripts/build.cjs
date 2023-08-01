@@ -31,21 +31,21 @@ const rollupOptions = {
 const createPackageJson = name => {
   // 根据传入name决定包名、主文件和主模块名称
   const fileStr = `{
-    "name": "${name ? name : 'sheep-ui'}",
+    "name": "${name ? name : 'ocean-ui'}",
     "version": "0.0.0",
-    "main": "${name ? 'index.umd.js' : 'sheep-ui.umd.js'}",
-    "module": "${name ? 'index.js' : 'sheep-ui.js'}",
+    "main": "${name ? 'index.umd.js' : 'ocean-ui.umd.js'}",
+    "module": "${name ? 'index.js' : 'ocean-ui.js'}",
     "author": "杨村长",
     "github": "",
-    "description": "羊村第一个组件库Sheep-UI，以后村里羊圈能不能建好就看它了！",
+    "description": "第一个组件库Ocean-UI，以后村里羊圈能不能建好就看它了！",
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/57code/sheep-ui.git"
+      "url": "git+https://github.com/Aurora-del-prog/Ocean-UI.git"
     },
     "keywords": ["vue3", "组件库", "tsx", "UI"],
     "license": "ISC",
     "bugs": {
-      "url": "https://github.com/57code/sheep-ui/issues"
+      "url": "https://github.com/Aurora-del-prog/Ocean-UI.git/issues"
     },
   }`
   // 存在包名称，给单组件生成package.json文件
@@ -92,8 +92,8 @@ const buildAll = async () => {
         rollupOptions,
         lib: {
           entry: entryFile,
-          name: 'sheep-ui',
-          fileName: 'sheep-ui',
+          name: 'ocean-ui',
+          fileName: 'ocean-ui',
           formats: ['es', 'umd']
         },
         outDir: outputDir

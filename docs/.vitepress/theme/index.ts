@@ -1,7 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 
 // 导入sheep-ui
-import SheepUI from '../../../scripts/entry'
+import OceanUI from '../../../scripts/entry'
 import '../../../src/styles/index.scss'
 
 // 主题样式
@@ -19,7 +19,7 @@ export default {
   ...DefaultTheme,
   enhanceApp({ app }) {
     // register global components
-    app.use(SheepUI)
+    app.use(OceanUI)
 
     // 注册DemoBlock所需组件
     app.component('Demo', Demo)
