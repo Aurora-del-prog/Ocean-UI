@@ -46,18 +46,20 @@ export function useCore(innerData: Ref<IInnerTreeNode[]>): IUseCore {
 
   // 计算参考线高度
   const getChildrenExpanded = (
-    node: IInnerTreeNode,
+    node: IInnerTreeNode, // 定义一个名为 getChildrenExpanded 的函数，接收两个参数：节点对象 node，类型为 IInnerTreeNode；存储结果的数组 result，类型为 IInnerTreeNode[]，初始值为空数组
     result: IInnerTreeNode[] = []
   ) => {
     // 获取当前节点的直接子节点
-    const childrenNodes = getChildren(node, false)
-    result.push(...childrenNodes)
+    const childrenNodes = getChildren(node, false) // 调用 getChildren 函数，获取当前节点的所有直接子节点，不包含已隐藏的节点，并将结果存储在 childrenNodes 变量中
+    result.push(...childrenNodes) // 将 childrenNodes 数组中的所有元素添加到 result 数组中，使用扩展运算符 ...
     childrenNodes.forEach(item => {
+      // 遍历 childrenNodes 数组中的每个节点
       if (item.expanded) {
-        getChildrenExpanded(item, result)
+        // 如果节点已展开，则执行下面的递归操作
+        getChildrenExpanded(item, result) // 递归调用 getChildrenExpanded 函数，传入子节点 item 和存储结果的数组 result
       }
     })
-    return result
+    return result // 返回存储结果的数组 result
   }
 
   const getIndex = (node: IInnerTreeNode) => {

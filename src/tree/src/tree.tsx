@@ -1,4 +1,4 @@
-import { SetupContext, defineComponent, toRefs } from 'vue'
+import { SetupContext, defineComponent, provide, toRefs } from 'vue'
 import { IInnerTreeNode, TreeProps, treeProps } from './tree-type'
 import '../style/tree.scss'
 import useTree from './hooks/use-tree'
@@ -14,6 +14,7 @@ export default defineComponent({
     const { data, height, itemHeight } = toRefs(props)
     const { slots } = context
     const treeData = useTree(data.value, props, context)
+    provide('TREE_UTILS', treeData)
     return () => {
       const TreeNode = (treeNode: IInnerTreeNode) => (
         <STreeNode {...props} treeNode={treeNode}>
