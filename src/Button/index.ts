@@ -1,6 +1,6 @@
 // button/index.ts
 import { App } from 'vue'
-import Button from './src/Button'
+import Button from './src/button'
 
 export { Button }
 

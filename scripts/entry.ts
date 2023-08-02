@@ -1,7 +1,7 @@
 // /scripts/entry.ts
 import type { App } from 'vue'
 import ButtonPlugin, { Button } from '../src/button'
-// import TreePlugin, { Tree } from '../src/tree'
+import TreePlugin, { Tree } from '../src/tree'
 // import PaginationPlugin, { Pagination } from '../src/pagination'
 // import FormPlugin, { Form } from '../src/form'
 // import InputPlugin, { Input } from '../src/input'
@@ -10,8 +10,8 @@ import ButtonPlugin, { Button } from '../src/button'
 // import TabPlugin, { Tabs, Tab } from '../src/tab'
 
 const installs = [
-  ButtonPlugin
-  // TreePlugin,
+  ButtonPlugin,
+  TreePlugin
   // PaginationPlugin,
   // FormPlugin,
   // InputPlugin,
@@ -21,7 +21,7 @@ const installs = [
 ]
 
 //Tree, Pagination, Form, Input, Modal, Icon, Tabs, Tab
-export { Button }
+export { Button, Tree }
 
 export default {
   version: '0.0.1',

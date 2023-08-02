@@ -1,6 +1,6 @@
 // button.test.ts
 import { render } from '@testing-library/vue'
-import Button from '../src/button'
+import Button from './button'
 
 // 基础按钮
 test('it should work', () => {
