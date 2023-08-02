@@ -49,6 +49,32 @@ export default defineComponent({
           ) : (
             slots.icon!()
           )}
+
+          {/* 复选框 */}
+          {checkable.value && (
+            <span
+              class={`relative ${
+                treeNode.value.inChecked ? 's-tree__inChecked' : ''
+              }`}
+            >
+              {/* 半选 */}
+              {treeNode.value.inChecked && (
+                <span
+                  class="s-tree-checkbox__inner cursor-pointer"
+                  onClick={() => toggleCheckNode(treeNode.value)}
+                >
+                  -
+                </span>
+              )}
+              {/* 全选 */}
+              <input
+                type="checkbox"
+                style={{ marginRight: '8px' }}
+                v-model={treeNode.value.checked}
+                onClick={() => toggleCheckNode(treeNode.value)}
+              ></input>
+            </span>
+          )}
           {/* 节点文本 */}
           {slots.content!()}
         </div>

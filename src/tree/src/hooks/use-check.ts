@@ -12,6 +12,7 @@ export function useCheck(
     treeNode.checked = !treeNode.checked
     treeNode.inChecked = false // 重置待选中状态
 
+    // 父->子
     // 获取所有子节点，设置它们checked跟父节点一致
     getChildren(treeNode).forEach(child => {
       child.checked = treeNode.checked
@@ -23,6 +24,7 @@ export function useCheck(
     }
 
     // 子-父联动 并且设置父节点选中内容
+    //获取当前节点的父节点，查看父节点的所有直接子节点是否全部选中，如果是，父节点也应该为选中，半选取消，如果不是（部分子节点选中）,父节点半选，然后再递归父节点的父节点查找
     const setChecked = (node: IInnerTreeNode) => {
       // 获取父节点
       const parentNode = getParent(node)
