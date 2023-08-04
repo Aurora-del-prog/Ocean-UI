@@ -58,4 +58,5 @@ export type TreeUtils = {
   treeData: Ref<IInnerTreeNode[]>
 } & IUseCore &
   IUseToggle &
-  IUseCheck
+  IUseCheck &
+  IUseOperate
