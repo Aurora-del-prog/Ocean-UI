@@ -411,7 +411,7 @@ export default defineComponent({
 </script>
 ```
 :::
-<!-- 
+
 ## 节点懒加载
 通过设置该节点 isLeaf 参数为 false, 组件回调 lazyLoad 方法实现节点懒加载。
 :::demo 通过设置该节点 isLeaf 参数为 false, 组件回调 lazyLoad 方法实现节点懒加载。
@@ -427,24 +427,14 @@ export default defineComponent({
     const data = ref([
       {
         id: 'node-1',
-        label: 'node-1',
-        children: [
-          {
-            id: 'node-1-1',
-            label: 'node 1-1 - dynamic loading',
-            isLeaf: false,
-          },
-          { 
-            id: 'node 1-2',
-            label: 'node 1-2',
-          },
-        ],
-      },
-      { 
-        id: 'node-2',
-        label: 'node 2 - dynamic loading',
+        label: 'node 1',
         isLeaf: false
       },
+      {
+        id: 'node-2',
+        label: 'node 2',
+        isLeaf: false
+      }
     ]);
 
    const lazyLoad = (node, callback) => {
@@ -478,4 +468,4 @@ export default defineComponent({
 })
 </script>
 ```
-::: -->
+:::

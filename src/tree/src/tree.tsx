@@ -8,7 +8,7 @@ import STreeNodeToggle from './components/tree-node-toggle'
 export default defineComponent({
   name: 'STree',
   props: treeProps,
-  emits: [],
+  emits: ['lazy-load'],
   setup(props: TreeProps, context: SetupContext) {
     // 获取data
     const { data, height, itemHeight } = toRefs(props)
@@ -33,6 +33,12 @@ export default defineComponent({
                   expanded={!!treeNode.expanded}
                   onClick={() => treeData.toggleNode(treeNode)}
                 ></STreeNodeToggle>
+              ),
+            loading: () =>
+              slots.loading ? (
+                slots.loading({ nodeData: treeData })
+              ) : (
+                <span class="ml-1">loading...</span>
               )
           }}
         </STreeNode>

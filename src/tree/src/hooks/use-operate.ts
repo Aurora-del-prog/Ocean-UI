@@ -1,11 +1,18 @@
-import { Ref, ref } from 'vue'
+import { Ref, SetupContext, ref } from 'vue'
 import { randomId } from '../../../shared/utils'
 import { IInnerTreeNode } from '../tree-type'
-import { IUseCheck, IUseCore, IUseOperate } from '../types/use-tree-type'
+import {
+  IUseCheck,
+  IUseCore,
+  IUseLazyLoad,
+  IUseOperate
+} from '../types/use-tree-type'
 
 export function useOperate(
   innerData: Ref<IInnerTreeNode[]>,
-  { getChildren, getIndex }: IUseCore
+  { getChildren, getIndex }: IUseCore,
+  context?: SetupContext,
+  lazyLoad?: IUseLazyLoad
 ): IUseOperate {
   const append = (parent: IInnerTreeNode, node: IInnerTreeNode) => {
     // console.log('node-operate append', parent, node)

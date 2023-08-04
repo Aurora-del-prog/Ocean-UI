@@ -7,6 +7,7 @@ import { useCheck } from './use-check'
 import { useCore } from './use-core'
 import { useToggle } from './use-toggle'
 import { useOperate } from './use-operate'
+import { useLazyLoad } from './use-lazy-load'
 
 export default function useTree(
   tree: ITreeNode[] | Ref<ITreeNode[]>,
@@ -17,13 +18,12 @@ export default function useTree(
   const innerData = ref(generateInnerTree(data))
 
   const core = useCore(innerData)
-  const toggle = useToggle(innerData)
-  const check = useCheck(innerData, core)
   const plugins = [useToggle, useCheck, useOperate]
+  const lazyLoad = useLazyLoad(innerData, core, context)
 
   // 聚合插件
   const pluginMetheds = plugins.reduce((acc, plugin) => {
-    return { ...acc, ...plugin(innerData, core) }
+    return { ...acc, ...plugin(innerData, core, context, lazyLoad) }
   }, {})
 
   return {

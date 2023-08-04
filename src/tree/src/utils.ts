@@ -24,7 +24,7 @@ export function generateInnerTree(
       return prev.concat(o, children)
     } else {
       // 叶子节点的情况:
-      // 如果是懒加载，isLeaf会被设置为false，
+      // 如果是懒加载，isLeaf会被设置为false,导致影响已经设置的懒加载节点
       // 如果没有初始化，则默认设置为true
       if (o.isLeaf === undefined) {
         o.isLeaf = true

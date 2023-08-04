@@ -123,6 +123,9 @@ export default defineComponent({
               </svg>
             </span>
           )}
+
+          {/* loading状态显示 */}
+          {treeNode.value.loading && slots.loading!()}
         </div>
       </div>
     )

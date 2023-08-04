@@ -1,10 +1,17 @@
-import { Ref } from 'vue'
+import { Ref, SetupContext } from 'vue'
 import { IInnerTreeNode } from '../tree-type'
-import { IUseCheck, IUseCore, IUseToggle } from '../types/use-tree-type'
+import {
+  IUseCheck,
+  IUseCore,
+  IUseLazyLoad,
+  IUseToggle
+} from '../types/use-tree-type'
 
 export function useCheck(
   innerData: Ref<IInnerTreeNode[]>,
-  { getChildren }: IUseCore
+  { getChildren }: IUseCore,
+  context?: SetupContext,
+  lazyLoad?: IUseLazyLoad
 ): IUseCheck {
   const toggleCheckNode = (treeNode: IInnerTreeNode) => {
     // 父节点可能一开始没有设置checked
