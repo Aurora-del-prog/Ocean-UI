@@ -2,7 +2,7 @@
 import type { App } from 'vue'
 import ButtonPlugin, { Button } from '../src/button'
 import TreePlugin, { Tree } from '../src/tree'
-// import PaginationPlugin, { Pagination } from '../src/pagination'
+import PaginationPlugin, { Pagination } from '../src/pagination'
 // import FormPlugin, { Form } from '../src/form'
 // import InputPlugin, { Input } from '../src/input'
 // import ModalPlugin, { Modal } from '../src/modal'
@@ -11,8 +11,8 @@ import TreePlugin, { Tree } from '../src/tree'
 
 const installs = [
   ButtonPlugin,
-  TreePlugin
-  // PaginationPlugin,
+  TreePlugin,
+  PaginationPlugin
   // FormPlugin,
   // InputPlugin,
   // ModalPlugin,
@@ -21,7 +21,7 @@ const installs = [
 ]
 
 //Tree, Pagination, Form, Input, Modal, Icon, Tabs, Tab
-export { Button, Tree }
+export { Button, Tree, Pagination }
 
 export default {
   version: '0.0.1',
