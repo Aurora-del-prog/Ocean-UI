@@ -22,7 +22,9 @@ const sidebar = [
     ]
   },
   { text: '反馈', items: [
-    { text: 'Modal 模态框', link: '/components/modal/' }
+    { text: 'Modal 模态框', link: '/components/modal/' },
+    { text: 'Popover 弹出框', link: '/components/popover/' }
+
   ] },
   { text: '数据录入', items: [
     { text: 'Form 表单', link: '/components/form/' }

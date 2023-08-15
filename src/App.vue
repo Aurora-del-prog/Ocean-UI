@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { Table, Column } from './table'
+import { ref } from 'vue'
+// import { Table, Column } from './table'
 
 const tableData = ref([
   {
