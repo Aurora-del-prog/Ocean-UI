@@ -9,7 +9,7 @@ import PopoverPlugin, { Popover } from '../src/popover'
 
 // import ModalPlugin, { Modal } from '../src/modal'
 import IconPlugin, { Icon } from '../src/icon'
-// import TabPlugin, { Tabs, Tab } from '../src/tab'
+import TabPlugin, { Tabs, Tab } from '../src/tabs'
 
 const installs = [
   ButtonPlugin,
@@ -19,12 +19,12 @@ const installs = [
   InputPlugin,
   PopoverPlugin,
   // ModalPlugin,
-  IconPlugin
-  // TabPlugin
+  IconPlugin,
+  TabPlugin
 ]
 
 //Tree, Pagination, Form, Input, Modal, Icon, Tabs, Tab
-export { Button, Tree, Pagination, Form, Input, Popover, Icon }
+export { Button, Tree, Pagination, Form, Input, Popover, Icon, Tabs, Tab }
 
 export default {
   version: '0.0.1',
