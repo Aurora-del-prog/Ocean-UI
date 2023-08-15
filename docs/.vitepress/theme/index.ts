@@ -1,6 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 
-// 导入sheep-ui
+// 导入ocean-ui
 import OceanUI from '../../../scripts/entry'
 import '../../../src/styles/index.scss'
 

@@ -1,49 +1,14 @@
+<template>
+  <icon component="icon-guanbijiantou" size="30px" color="green"></icon>
+  <icon component="icon-zengjia" :size="30" color="blue"></icon>
+  <icon component="icon-baocun" :size="30" color="red"></icon>
+</template>
+
 <script setup lang="ts">
 import { ref } from 'vue'
 // import { Table, Column } from './table'
-
-const tableData = ref([
-  {
-    date: '2016-05-03',
-    name: 'Mark',
-    address: 'No. 189, Grove St, Los Angeles',
-    checked: true
-  },
-  {
-    date: '2016-05-03',
-    name: 'Mark',
-    address: 'No. 189, Grove St, Los Angeles'
-  },
-  {
-    date: '2016-05-03',
-    name: 'Mark',
-    address: 'No. 189, Grove St, Los Angeles'
-  }
-])
-
-const editRow = (row: any) => {
-  console.log('editRow', row)
-}
-
-const onSelectionChange = (checkedRows: any) => {
-  console.log('checkedRows', checkedRows)
-}
+import { Icon } from './icon'
 </script>
-
-<template>
-  <Table :data="tableData" @selection-change="onSelectionChange">
-    <Column type="selection"></Column>
-    <Column field="date" header="Date"></Column>
-    <Column field="name" header="Name"></Column>
-    <Column field="address" header="Address"></Column>
-    <Column header="操作">
-      <template #default="row">
-        <button @click="editRow(row)">编辑</button>
-        <button>删除</button>
-      </template>
-    </Column>
-  </Table>
-</template>
 
 <style scoped>
 .logo {

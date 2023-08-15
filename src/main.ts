@@ -3,7 +3,7 @@ import { createApp } from 'vue'
 import './styles/index.scss'
 import App from './App.vue'
 import Button from './button'
+import Icon from './icon'
 // import SheepUI from '../build/'
-import '../build/style.css'
 
-createApp(App).use(Button).mount('#app')
+createApp(App).use(Icon).mount('#app')

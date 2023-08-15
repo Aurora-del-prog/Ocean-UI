@@ -7,11 +7,11 @@
 
 ```vue
 <template>
-  <s-icon name="vuejs"></s-icon>
-  <s-icon name="https://vitejs.dev/logo.svg" width="30"></s-icon>
+  <s-icon name="icon-zengjia"></s-icon>
+  <s-icon name="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg" width="80px"></s-icon>
+  <s-icon name="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel4.jpeg" :width="80"></s-icon>
 </template>
 ```
-
 :::
 
 ## 尺寸
@@ -21,9 +21,9 @@
 
 ```vue
 <template>
-  <s-icon name="vuejs" size="30px"></s-icon>
-  <s-icon name="react" :size="30"></s-icon>
-  <s-icon name="angular" :size="30"></s-icon>
+  <s-icon name="icon-guanbijiantou" size="30px"></s-icon>
+  <s-icon name="icon-zengjia" :size="30"></s-icon>
+   <s-icon name="icon-baocun" :size="30"></s-icon>
 </template>
 ```
 
@@ -36,9 +36,9 @@
 
 ```vue
 <template>
-  <s-icon name="vuejs" size="30px" color="green"></s-icon>
-  <s-icon name="react" :size="30" color="blue"></s-icon>
-  <s-icon name="angular" :size="30" color="red"></s-icon>
+  <s-icon name="icon-guanbijiantou" size="30px" color="green"></s-icon>
+  <s-icon name="icon-zengjia" :size="30" color="blue"></s-icon>
+   <s-icon name="icon-baocun" :size="30" color="red"></s-icon>
 </template>
 ```
 
@@ -50,9 +50,9 @@
 
 ```vue
 <template>
-  <s-icon component="vuejs" size="30px" color="green"></s-icon>
-  <s-icon component="react" :size="30" color="blue"></s-icon>
-  <s-icon component="angular" :size="30" color="red"></s-icon>
+  <s-icon component="icon-guanbijiantou" size="30px" ></s-icon>
+  <s-icon component="icon-zengjia" :size="30" ></s-icon>
+  <s-icon component="icon-baocun" :size="30" ></s-icon>
 </template>
 ```
 
