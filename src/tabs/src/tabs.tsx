@@ -21,10 +21,14 @@ export default defineComponent({
     //关闭箭头显示
     const visible = ref(true)
 
+    //tab数量
+    const len = ref(1)
+
     // 使用watch函数监听tabsData的长度变化
     watch(
       tabsData,
       (newTabsData, oldTabsData) => {
+        len.value = newTabsData.length
         if (newTabsData.length === 1) {
           activeTab.value = newTabsData[0].id // 使用单个等号赋值
           visible.value = false
@@ -38,10 +42,22 @@ export default defineComponent({
       activeTab.value = tabId
     }
 
-    // 增加一个关闭方法
+    // 关闭方法
     const closeTab = (tabId: string) => {
       const tabIndex = tabsData.value.findIndex(item => item.id === tabId)
       tabsData.value.splice(tabIndex, 1)
+    }
+
+    //新增
+    const addTab = () => {
+      const id = ++len.value + ''
+      tabsData.value.push({
+        id,
+        type: 'random',
+        title: 'New Tab' + `${id}`,
+        content: 'New Tab Content' + `${id}`
+      })
+      activeTab.value = id
     }
     return () => (
       <div class={'s-tabs'}>
@@ -68,9 +84,28 @@ export default defineComponent({
               )}
             </li>
           ))}
+          {/* 添加标签按钮 */}
+          {addable.value && (
+            <li>
+              <svg
+                onClick={addTab}
+                viewBox="0 0 1024 1024"
+                width="14"
+                height="14"
+              >
+                <path d="M590.769231 571.076923h324.923077c15.753846 0 29.538462-13.784615 29.538461-29.538461v-59.076924c0-15.753846-13.784615-29.538462-29.538461-29.538461H590.769231c-11.815385 0-19.692308-7.876923-19.692308-19.692308V108.307692c0-15.753846-13.784615-29.538462-29.538461-29.538461h-59.076924c-15.753846 0-29.538462 13.784615-29.538461 29.538461V433.230769c0 11.815385-7.876923 19.692308-19.692308 19.692308H108.307692c-15.753846 0-29.538462 13.784615-29.538461 29.538461v59.076924c0 15.753846 13.784615 29.538462 29.538461 29.538461H433.230769c11.815385 0 19.692308 7.876923 19.692308 19.692308v324.923077c0 15.753846 13.784615 29.538462 29.538461 29.538461h59.076924c15.753846 0 29.538462-13.784615 29.538461-29.538461V590.769231c0-11.815385 7.876923-19.692308 19.692308-19.692308z"></path>
+              </svg>
+            </li>
+          )}
         </ul>
         {/* 内容区 */}
         {slots.default?.()}
+        {/* 显示新增的内容 */}
+        {tabsData.value
+          .filter(tab => tab.type === 'random' && tab.id === activeTab.value)
+          .map(tab => (
+            <div class="s-tab">{tab.content}</div>
+          ))}
       </div>
     )
   }
