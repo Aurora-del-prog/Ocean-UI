@@ -1,5 +1,5 @@
 import { defineComponent, provide, ref, toRefs, watch } from 'vue'
-import { TabsProps, tabsProps } from '../types/tabs-type'
+import { TabsProps, tabsProps } from './types/tabs-type'
 import '../style/tabs.scss'
 
 export default defineComponent({

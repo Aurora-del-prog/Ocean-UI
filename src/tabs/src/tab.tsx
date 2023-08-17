@@ -1,5 +1,5 @@
 import { Ref, defineComponent, inject, toRefs } from 'vue'
-import { TabProps, tabProps } from '../types/tab-type'
+import { TabProps, tabProps } from './types/tab-type'
 
 export default defineComponent({
   name: 'STab',
