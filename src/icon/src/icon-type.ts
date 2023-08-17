@@ -25,6 +25,11 @@ export const iconProps = {
   component: {
     type: String,
     default: null
+  },
+  //组件
+  loading: {
+    type: Boolean,
+    default: false
   }
 } as const
 

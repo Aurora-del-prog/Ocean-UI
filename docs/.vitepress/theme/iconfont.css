@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4211794 */
-  src: url('iconfont.woff2?t=1692089023361') format('woff2'),
-       url('iconfont.woff?t=1692089023361') format('woff'),
-       url('iconfont.ttf?t=1692089023361') format('truetype');
+  src: url('iconfont.woff2?t=1692261678941') format('woff2'),
+       url('iconfont.woff?t=1692261678941') format('woff'),
+       url('iconfont.ttf?t=1692261678941') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-loading:before {
+  content: "\e660";
 }
 
 .icon-guanbijiantou:before {

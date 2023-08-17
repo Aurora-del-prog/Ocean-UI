@@ -35,7 +35,7 @@ export default defineComponent({
     // svg显示
     const svgIcon = (
       <svg
-        class="icon"
+        class={['icon', { 'icon-loading': props.loading === true }]}
         style={{
           width: iconSize.value,
           height: iconSize.value

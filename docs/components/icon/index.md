@@ -50,6 +50,7 @@
 
 ```vue
 <template>
+<s-icon component="icon-loading" size="30px" loading></s-icon>
   <s-icon component="icon-guanbijiantou" size="30px" ></s-icon>
   <s-icon component="icon-zengjia" :size="30" ></s-icon>
   <s-icon component="icon-baocun" :size="30" ></s-icon>
