@@ -118,9 +118,8 @@ export default defineComponent({
     <template #header="{ close }">
       <div class="my-header">
         <h4>This is a custom header!</h4>
-        <s-button type="danger" @click="close">
-          Close
-        </s-button>
+        <s-icon class="icon" name="icon-guanbijiantou" size="17px" 
+        color="black" @click="close"></s-icon>
       </div>
     </template>
     This is dialog content.
@@ -152,6 +151,10 @@ export default defineComponent({
   padding: 20px;
   margin-right: 16px;
   word-break: break-all;
+  color: black
+}
+.icon{
+  cursor: pointer;
 }
 </style>
 ```
