@@ -27,7 +27,8 @@ const sidebar = [
 
   ] },
   { text: '数据录入', items: [
-    { text: 'Form 表单', link: '/components/form/' }
+    { text: 'Form 表单', link: '/components/form/' },
+    { text: 'Inpput 输入框', link: '/components/input/' }
   ] },
   { text: '数据展示', items: [{ text: 'Tree 树', link: '/components/tree/' }] },
   { text: '布局', items: [] }

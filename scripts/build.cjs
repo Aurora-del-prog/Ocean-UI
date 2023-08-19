@@ -35,9 +35,9 @@ const createPackageJson = name => {
     "version": "0.0.0",
     "main": "${name ? 'index.umd.js' : 'ocean-ui.umd.js'}",
     "module": "${name ? 'index.js' : 'ocean-ui.js'}",
-    "author": "杨村长",
+    "author": "HSL",
     "github": "",
-    "description": "第一个组件库Ocean-UI，以后村里羊圈能不能建好就看它了！",
+    "description": "第一个组件库Ocean-UI",
     "repository": {
       "type": "git",
       "url": "git+https://github.com/Aurora-del-prog/Ocean-UI.git"

@@ -1,5 +1,7 @@
 import type { PropType, ExtractPropTypes } from 'vue'
 
+export type InputSize = 'lg' | 'sm'
+
 export const inputProps = {
   modelValue: {
     type: String,
@@ -9,6 +11,26 @@ export const inputProps = {
   type: {
     type: String,
     default: 'text'
+  },
+  placeholder: {
+    type: String,
+    default: ''
+  },
+  size: {
+    type: String as PropType<InputSize>,
+    default: 'sm'
+  },
+  disabled: {
+    type: Boolean,
+    default: false
+  },
+  name: {
+    type: String,
+    default: ''
+  },
+  iconSize: {
+    type: String,
+    default: ''
   }
 } as const
 export type InputProps = ExtractPropTypes<typeof inputProps>

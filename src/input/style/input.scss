@@ -1,5 +1,43 @@
 .s-input {
   /* your component style */
+  /* CSS样式表 */
+  position: relative;
+}
+.s-input_lg{
+  width: 230px;
+}
+.s-input_sm{
+  width: 200px;
+}
+.custom-input-lg {
+  width: 230px;
+  font-size: 20px;
+  padding: 8px 12px;
+}
+
+.custom-input-sm {
+  width: 200px;
+  font-size: 14px;
+  padding: 5px 10px;
 }
 .s-input__input {
+  background-color: #444;
+  // 设置默认边框样式
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  // 设置聚焦时的边框样式
+  &:focus {
+    outline: none; // 移除默认的聚焦边框
+    border-color: #00a0e9; // 设置聚焦时的边框颜色
+    box-shadow: 0 0 5px #00a0e9; // 设置聚焦时的阴影效果
+  }
+}
+
+.s-input__icon{
+  padding-right: 35px !important;
+}
+.s-icon{
+  position: absolute;
+  right: 0;
+  margin-top: 3px;
 }
