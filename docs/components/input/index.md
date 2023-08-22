@@ -8,7 +8,7 @@
 
 ```vue
 <template>
-   <s-input v-model="model.user" placeholder="请输入文字"><br/>
+   <s-input v-model="model.user" placeholder="请输入文字" autoCompelte><br/>
 </template>
 <script setup>
   import {ref} from 'vue'

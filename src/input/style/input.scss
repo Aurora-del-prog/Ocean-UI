@@ -9,6 +9,9 @@
 .s-input_sm{
   width: 200px;
 }
+.s-input_normal{
+  width: 100% !important;
+}
 .custom-input-lg {
   width: 230px;
   font-size: 20px;
@@ -17,6 +20,11 @@
 
 .custom-input-sm {
   width: 200px;
+  font-size: 14px;
+  padding: 5px 10px;
+}
+.custom-input-normal {
+  width: 100%;
   font-size: 14px;
   padding: 5px 10px;
 }

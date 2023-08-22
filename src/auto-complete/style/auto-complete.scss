@@ -1,0 +1,21 @@
+.s-auto-complete {
+  /* your component style */
+
+}
+.s-ul{
+  padding-left: 0 !important;
+}
+.s-li{
+  color: aliceblue;
+  list-style: none;
+  padding: 5px 0 5px 10px;
+  &:hover{
+    color: #5e7ce0;
+  }
+}
+.s-itemSelect{
+  background-color: #5e7ce0;
+}
+.s-visible{
+  display: none !important;
+}

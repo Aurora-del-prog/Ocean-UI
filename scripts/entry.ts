@@ -10,6 +10,7 @@ import PopoverPlugin, { Popover } from '../src/popover'
 import ModalPlugin, { Modal } from '../src/modal'
 import IconPlugin, { Icon } from '../src/icon'
 import TabPlugin, { Tabs, Tab } from '../src/tabs'
+import AutoCompletePlugin, { AutoComplete } from '../src/auto-complete'
 
 const installs = [
   ButtonPlugin,
@@ -20,7 +21,8 @@ const installs = [
   PopoverPlugin,
   ModalPlugin,
   IconPlugin,
-  TabPlugin
+  TabPlugin,
+  AutoCompletePlugin
 ]
 
 //Tree, Pagination, Form, Input, Modal, Icon, Tabs, Tab
@@ -34,7 +36,8 @@ export {
   Icon,
   Tabs,
   Tab,
-  Modal
+  Modal,
+  AutoComplete
 }
 
 export default {

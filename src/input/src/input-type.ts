@@ -31,6 +31,10 @@ export const inputProps = {
   iconSize: {
     type: String,
     default: ''
+  },
+  autoCompelte: {
+    type: Boolean,
+    default: false
   }
 } as const
 export type InputProps = ExtractPropTypes<typeof inputProps>
