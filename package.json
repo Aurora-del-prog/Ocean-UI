@@ -1,8 +1,8 @@
 {
-  "name": "vite-project",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "ocean_ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -14,6 +14,12 @@
     "test": "vitest",
     "build:components": "node ./scripts/build.cjs"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "type": "module",
+
   "dependencies": {
     "@floating-ui/dom": "^1.0.2",
     "async-validator": "^4.2.5",
