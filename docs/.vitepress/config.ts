@@ -2,9 +2,16 @@ import { demoBlockPlugin } from 'vitepress-theme-demoblock'
 
 const sidebar = [
   {
-    text: '快速开始',
+    text: '引入',
     items: [
-      { text: '安装', link: '/guide/install' } // /guide/install.md
+      {
+        text: '介绍',
+        link: '/guide/introduce'
+      },
+      {
+        text: '快速开始',
+        link: '/guide/quickstart'
+      }
     ]
   },
   {
@@ -37,8 +44,16 @@ const sidebar = [
 ]
 
 export default {
+  title: "OceanUI",
+  base: process.env.NODE_ENV === 'production' ? '/easyest/' : '/',
   themeConfig: {
-    sidebar
+    nav: [
+      { text: "组件", link: "/components/button/" },
+    ],
+    sidebar,
+    socialLinks: [
+      { icon: "github", link: "https://github.com/Aurora-del-prog/Ocean-UI" },
+    ],
   },
   markdown: {
     config: md => {
