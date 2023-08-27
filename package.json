@@ -1,5 +1,5 @@
 {
-  "name": "ocean_ui",
+  "name": "oceanui",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -19,7 +19,6 @@
   "license": "ISC",
   "private": true,
   "type": "module",
-
   "devDependencies": {
     "@testing-library/vue": "^6.6.1",
     "@types/node": "^18.0.6",
